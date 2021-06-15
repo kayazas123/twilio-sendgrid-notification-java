@@ -2,7 +2,6 @@ package com.hardik.ballista.mail;
 
 import java.io.IOException;
 
-import org.springframework.boot.configurationprocessor.json.JSONException;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 
@@ -36,7 +35,7 @@ public class EmailService {
 
 	private final SendGridConfigurationProperties sendGridConfigurationProperties;
 
-	public Integer sendMail(final String subject, final String body, final String userEmailId) throws JSONException {
+	public Integer sendMail(final String subject, final String body, final String userEmailId) {
 		final var properties = sendGridConfigurationProperties.getSendgrid();
 		final var mail = new Mail();
 		final var personalization = new Personalization();
