@@ -10,4 +10,8 @@ import com.hardik.ballista.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, UUID> {
 
+	Boolean existsByEmailId(String emailId);
+
+	Boolean existsByContactNumber(String contactNumber);
+
 }
